@@ -1,0 +1,51 @@
+{%extends "dlayout.html"%}
+{%block content%}
+<!-- banner -->
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+<!-- //banner -->
+
+<div class="inner_content_info_agileits">
+   <div class="container">
+        <h3 class="heading-agileinfo">ADD DISEASE</h3>
+        <div class="modal-body align-w3">
+            <form action="/adddisease" method="POST">
+                <div class="form-group">
+                    <label>Name of the Disease</label>
+                    <input type="text" class="form-control" id="disease" name="disease"  placeholder="" required="">
+                </div>
+                <div class="form-group">
+                    <label>Symptoms</label>
+                    <input type="text" class="form-control" id="symptom" name="symptom" placeholder="" required="">
+                </div>
+                <div class="form-group">
+                    <label>Disease Category</label>
+                    <select id="category1" class="form-control" id="category" name="category" required="">
+                        <option value="Alergic">Alergic</option>
+                        <option value="Cardiac">Cardiac</option>
+                        <option value="Genetic">Genetic</option>
+                        <option value="Infectious">Infectious</option>
+                        <option value="Neurologic">Neurologic</option>
+                        <option value="Dental">Dental</option>
+                        <option value="Psychiatric">Psychiatric</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label>Remedies</label>
+                    <input type="text" class="form-control" id="remedy" name="remedy" placeholder="" required="">
+                </div>
+                <div class="right-w3l">
+                    <input type="submit" class="form-control bg-theme" value="ADD">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}

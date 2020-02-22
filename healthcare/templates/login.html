@@ -1,0 +1,66 @@
+{%extends "playout.html"%}
+{%block content%}
+<!-- banner -->
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+<!-- //banner -->
+
+<div class="inner_content_info_agileits">
+   <div class="container">
+        <h3 class="heading-agileinfo">Log In</h3>
+        <div class="modal-body align-w3">
+        <form action="" method="POST">
+            {{form.hidden_tag()}}
+            <div class="form-group">
+                <label class="mb-2">Email address</label>
+                <div class="form-group">
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            </div>
+            <div class="form-group">
+                <label class="mb-2">Password</label>
+                <div class="form-group">
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            </div>
+            <div class="form-check mb-2">
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                </div>
+            </div> 
+            <center>
+            <div class="right-w3l">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </center><br>
+            <p class="text-center pb-4">
+                <a href="register"> Don't have an account?</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+
+
+{%endblock%}

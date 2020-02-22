@@ -1,0 +1,123 @@
+{%extends "adminlayout.html"%}
+{%block content%}
+
+
+
+
+<div class="main-page">
+    <div class="forms">
+        <h2 class="title1"></h2>
+        
+        <div class="row">
+            <h3 class="title1">ADD DOCTOR :</h3>
+            <div class="form-three widget-shadow">
+                <form class="form-horizontal" action="" method="POST" >
+                    {{form.hidden_tag()}}
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label"> Name</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+
+                                {% if form.username.errors %}
+                                    {{ form.username(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.username.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.username(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Specialisation </label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                {% if form.speci.errors %}
+                                    {{ form.speci(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.speci.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.speci(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                {% if form.email.errors %}
+                                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.email(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Address</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                {% if form.address.errors %}
+                                    {{ form.address(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.address.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.address(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Contact Number</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                {% if form.phone.errors %}
+                                    {{ form.phone(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.phone.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.phone(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-8">
+                            <input type="submit" class="form-control" value="ADD">
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+
+{%endblock%}

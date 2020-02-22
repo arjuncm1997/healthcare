@@ -1,0 +1,46 @@
+{%extends "ulayout.html"%}
+{%block content%}
+<!-- banner -->
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+<!-- //banner -->
+
+<div class="inner_content_info_agileits">
+   <div class="container">
+        <h3 class="heading-agileinfo">Qusetion</h3>
+        <div class="modal-body align-w3">
+            <form action="/uask" method="POST">
+                    <div class="form-group">
+                            <label class="mb-2">Name of the Disease</label>
+                            <input type="" class="form-control" id="name" name="name" placeholder="" required="">
+                        </div>
+                        <div class="form-group">
+							<label>Qusetion</label>
+							<input type="text" class="form-control" id="question" name="question" placeholder="" required="">
+							
+						</div>
+						<div class="form-group">
+							<label>Choose your Doctor</label>
+							<select id="category1" class="form-control" id="doctor" name="doctor" required="">
+								<option> </option>
+
+								{% for doctor in doctor %}
+								<option value="{{doctor.username}}">{{doctor.username}}, {{doctor.specialisation}}</option>
+								{% endfor %}
+							</select>
+							<span></span>
+						</div>
+						
+                <div class="right-w3l">
+                    <input type="submit" class="form-control bg-theme" value="ADD">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}

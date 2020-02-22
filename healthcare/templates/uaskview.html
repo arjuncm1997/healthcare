@@ -1,0 +1,33 @@
+{% extends 'ulayout.html' %}
+
+{% block content %}
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+
+<h1 style="margin-top: 50px;margin-bottom: 50px;"><center>Queries View</center></h2><br>
+    <table border="2" style="width:1002px; margin-left:141px; text-align:center;">
+        <tr style="font-weight: bold;">
+            <td>No</td>
+            <td>Disease</td>
+            <td>Doctor</td>
+            <td>Qusetion</td>
+            <td>Answer</td>
+            <td>Action</th>
+        </tr>
+        {% for tasks in tasks %}
+            <tr>
+                <td>{{ tasks.id }}</td>
+                <td>{{ tasks.name }}</td>
+                <td>{{ tasks.doctor }}</td>
+                <td>{{ tasks.question }}</td>
+                <td>{{ tasks.reoly }}</td>
+        
+                <td><a href="/uaskdelete/{{tasks.id}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+<br><br>
+
+{% endblock %}

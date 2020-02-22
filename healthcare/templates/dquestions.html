@@ -1,0 +1,47 @@
+{% extends 'dlayout.html'%}
+{% block content %}
+
+
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+
+<h1 style="margin-top: 50px;margin-bottom: 50px;"><center>Questions</center></h2><br>
+    <table border="2" style="width:1002px; margin-left:141px; text-align:center;">
+        <tr style="font-weight: bold;">
+            <td>No</td>
+            <td>Name of Disease</td>
+            <td>Question</td>
+            <td>Answer Here</td>
+            <td>Action</th>
+        </tr>
+        {% for tasks in tasks %}
+            <tr>
+                <form action="" method="POST">
+                <td>{{ tasks.id }}</td>
+                <td>{{ tasks.name }}</td>
+                <td>{{ tasks.question }}</td>
+                <td>
+                    <div class="form-control" style="width: 500px;">
+                        {% if form.reply.errors %}
+                            {{ form.reply(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.reply.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.reply(class="form-control form-control-lg") }}
+                        {% endif %}
+                        
+                    </div>
+                </td>
+                <td><a href="">Submitt</a></td>
+            </form>
+            </tr>
+        {% endfor %}
+    </table>
+<br><br>
+
+{% endblock %}

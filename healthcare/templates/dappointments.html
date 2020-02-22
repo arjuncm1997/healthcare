@@ -1,0 +1,35 @@
+{% extends 'dlayout.html'%}
+{% block content %}
+
+
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+
+<h1 style="margin-top: 50px;margin-bottom: 50px;"><center>Appointments</center></h2><br>
+    <table border="2" style="width:1002px; margin-left:141px; text-align:center;">
+        <tr style="font-weight: bold;">
+            <td>No</td>
+            <td>Patient Name</td>
+            <td>Reason</td>
+            <td>Contact No</td>
+            <td>Visit Time & Date</td>
+            <td colspan=2>Action</th>
+        </tr>
+        {% for tasks in tasks %}
+            <tr>
+                <td>{{ tasks.id }}</td>
+                <td>{{ tasks.name }}</td>
+                <td>{{ tasks.reason }}</td>
+                <td>{{ tasks.contactno }}</td>
+                <td>{{ tasks.date }}</td>
+                
+                <td><a href="">Approve</a></td>
+                <td><a href="">Reject</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+<br><br>
+
+{% endblock %}

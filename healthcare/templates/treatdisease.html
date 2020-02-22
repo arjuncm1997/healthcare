@@ -1,0 +1,48 @@
+{%extends "ulayout.html"%}
+{%block content%}
+<!-- banner -->
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+<!-- //banner -->
+
+<div class="inner_content_info_agileits">
+   <div class="container">
+        <h3 class="heading-agileinfo">TREAT DISEASES</h3>
+        <div class="modal-body align-w3">
+            <form action="/treatdisease" method="POST">
+                    <div class="form-group">
+                            <label>Name of the Patient</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="" required="">
+                        </div>
+                        <div class="form-group">
+                                <label>Location</label>
+                                <input type="text" class="form-control" id="location" name="location" placeholder="" required="">
+                            </div>
+                        <div class="form-group">
+                                <label>Diseases</label>
+                                <select id="category1" class="form-control" id="dsiease" name="disease" required="">
+                                    <option value="Disease 1">Disease 1</option>
+                                    <option value="Disease 2">Disease 2</option>
+                                    <option value="Disease 3">Disease 3</option>
+                                    <option value="Disease 4">Disease 4</option>
+                                    <option value="Disease 5">Disease 5</option>
+                                </select>
+                                <span></span>
+                            </div>
+                            <div class="form-group">
+                                    <label>Contact Number</label>
+                                    <input type="text" class="form-control" id="contactno" name="contactno" placeholder="" required="">
+                                </div>
+                <div class="right-w3l">
+                    <input type="submit" class="form-control bg-theme" value="ADD">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}

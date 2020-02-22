@@ -1,0 +1,35 @@
+{% extends 'dlayout.html'%}
+{% block content %}
+
+
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+
+<h1 style="margin-top: 50px;margin-bottom: 50px;"><center>Diseases</center></h2><br>
+    <table border="2" style="width:1002px; margin-left:141px; text-align:center;">
+        <tr style="font-weight: bold;">
+            <td>Id</td>
+            <td>Disaease</td>
+            <td>SYmptom</td>
+            <td>Category</td>
+            <td>Remedy</td>
+            <td colspan=2>Action</th>
+        </tr>
+        {% for tasks in tasks %}
+            <tr>
+                <td>{{ tasks.id }}</td>
+                <td>{{ tasks.disease }}</td>
+                <td>{{ tasks.symptom }}</td>
+                <td>{{ tasks.category }}</td>
+                <td>{{ tasks.remedy }}</td>
+                
+                <td>Edit</td>
+                <td><a href='/adddiseasedelete/{{tasks.id}}'>Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+<br><br>
+
+{% endblock %}
