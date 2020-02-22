@@ -18,7 +18,7 @@
         </tr>
         {% for tasks in tasks %}
             <tr>
-                <form action="" method="POST">
+                <form action="/dreply" method="POST">
                 <td>{{ tasks.id }}</td>
                 <td>{{ tasks.name }}</td>
                 <td>{{ tasks.question }}</td>
@@ -37,7 +37,7 @@
                         
                     </div>
                 </td>
-                <td><a href="">Submitt</a></td>
+                <td><a href="/dreply/{{tasks.id}}">Submitt</a></td>
             </form>
             </tr>
         {% endfor %}

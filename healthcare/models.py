@@ -37,6 +37,7 @@ class DoctorAppoinment(db.Model):
     reason = db.Column(db.VARCHAR(200), nullable=False)
     contactno = db.Column(db.VARCHAR(200), nullable=False)
     date = db.Column(db.VARCHAR(200), nullable=False)
+    status = db.Column(db.String(200), nullable=False)
 
 class TreatDisease(db.Model):
     id = db.Column(db.Integer, primary_key=True)

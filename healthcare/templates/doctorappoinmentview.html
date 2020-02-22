@@ -14,6 +14,7 @@
             <td>Doctor</td>
             <td>Reason</td>
             <td>Contact No</td>
+            <td>Date & Time</td>
             <td>Status</td>
             <td colspan=2>Action</th>
         </tr>
@@ -24,7 +25,8 @@
                 <td>{{ tasks.doctor }}</td>
                 <td>{{ tasks.reason }}</td>
                 <td>{{ tasks.contactno }}</td>
-                <td></td>
+                <td>{{ tasks.date }}</td>
+                <td>{{ tasks.status }}</td>
                 <td>Edit</td>
                 <td><a href="/doctorappoinmentdelete/{{tasks.id}}">Delete</a></td>
             </tr>

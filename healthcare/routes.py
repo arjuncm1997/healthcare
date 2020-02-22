@@ -82,7 +82,9 @@ def adddoctor():
             letters = string.ascii_lowercase
             return ''.join(random.choice(letters) for i in range(stringLength))
         password =randomString()
-        new = User(username= form.username.data,email=form.email.data, specialisation = form.speci.data,address = form.address.data,password=password,phone = form.phone.data, usertype= 'doctor')
+        print(password)
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        new = User(username= form.username.data,email=form.email.data, specialisation = form.speci.data,address = form.address.data,password=hashed_password,phone = form.phone.data, usertype= 'doctor')
         db.session.add(new)
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
@@ -182,7 +184,7 @@ def doctorappoinment():
         reason = request.form ['reason']
         contactno = request.form ['contactno']
         date = request.form ['date']
-        appoinments = DoctorAppoinment(owner=current_user.username ,name=name,doctor=doctor,reason=reason,contactno=contactno,date = date)
+        appoinments = DoctorAppoinment(owner=current_user.username ,name=name,doctor=doctor,reason=reason,contactno=contactno,date = date,status = '')
 
         try:
             db.session.add(appoinments)
@@ -318,9 +320,36 @@ def dappointments():
     tasks= DoctorAppoinment.query.filter_by(doctor=current_user.username).all()
     return render_template("dappointments.html",tasks=tasks)
 
+@app.route('/approveappoint/<int:id>')
+def approveappoint(id):
+    approve = DoctorAppoinment.query.get_or_404(id)
+    approve.status = 'approved'
+    db.session.commit()
+    return redirect('/dappointments')
 
-@app.route('/dquestions')
+
+@app.route('/rejectappoint/<int:id>')
+def rejectappoint(id):
+    reject = DoctorAppoinment.query.get_or_404(id)
+    reject.status = 'rejected'
+    db.session.commit()
+    return redirect('/dappointments')
+
+@app.route('/dquestions',methods=['GET','POST'])
 def dquestions():
     form = Dquestions()
     tasks = Quesions.query.filter_by(doctor=current_user.username).all()
     return render_template("dquestions.html",tasks = tasks,form=form)
+
+
+@app.route('/dreply/<int:id>',methods=['GET','POST'])
+def dreply(id):
+    form = Dquestions()
+    task = Quesions.query.get_or_404(id)
+    if form.validate_on_submit():
+        task.reply = form.reply.data
+        db.session.commit() 
+        return redirect('/dquestions')
+
+    else:
+        return render_template("dquestions.html",form=form)

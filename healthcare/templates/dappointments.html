@@ -15,6 +15,7 @@
             <td>Reason</td>
             <td>Contact No</td>
             <td>Visit Time & Date</td>
+            <td>Status</td>
             <td colspan=2>Action</th>
         </tr>
         {% for tasks in tasks %}
@@ -24,9 +25,10 @@
                 <td>{{ tasks.reason }}</td>
                 <td>{{ tasks.contactno }}</td>
                 <td>{{ tasks.date }}</td>
+                <td>{{ tasks.status }}</td>
                 
-                <td><a href="">Approve</a></td>
-                <td><a href="">Reject</a></td>
+                <td><a href="/approveappoint/{{tasks.id}}">Approve</a></td>
+                <td><a href="/rejectappoint/{{tasks.id}}">Reject</a></td>
             </tr>
         {% endfor %}
     </table>
