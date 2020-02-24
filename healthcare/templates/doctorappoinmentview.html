@@ -16,7 +16,7 @@
             <td>Contact No</td>
             <td>Date & Time</td>
             <td>Status</td>
-            <td colspan=2>Action</th>
+            <td></th>
         </tr>
         {% for tasks in tasks %}
             <tr>
@@ -27,7 +27,6 @@
                 <td>{{ tasks.contactno }}</td>
                 <td>{{ tasks.date }}</td>
                 <td>{{ tasks.status }}</td>
-                <td>Edit</td>
                 <td><a href="/doctorappoinmentdelete/{{tasks.id}}">Delete</a></td>
             </tr>
         {% endfor %}

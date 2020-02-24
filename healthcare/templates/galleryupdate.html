@@ -1,0 +1,68 @@
+{%extends "adminlayout.html"%}
+{%block content%}
+
+
+
+
+<div class="main-page">
+    <div class="forms">
+        <h2 class="title1"></h2>
+        
+        <div class="row">
+            <h3 class="title1">ADD DOCTOR :</h3>
+            <div class="form-three widget-shadow">
+                <form class="form-horizontal" action=""  enctype="multipart/form-data" method="POST" >
+                    {{form.hidden_tag()}}
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label"> Description</label>
+                        <div class="col-sm-8">
+                            <div class="form-group" style="width: 300px;">
+
+                                {% if form.desc.errors %}
+                                    {{ form.desc(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.desc.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.desc(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label">Select an image </label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                {{ form.image.label() }}
+            {{ form.image(class="form-control-file") }}
+            {% if form.image.errors %}
+                {% for error in form.image.errors %}
+                    <span>{{ error }}</span></br>
+                {% endfor %}
+            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="focusedinput" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-8" style="width: 200px;">
+                            <input type="submit" class="form-control" value="ADD">
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+
+{%endblock%}

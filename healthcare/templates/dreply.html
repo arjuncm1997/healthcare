@@ -1,0 +1,43 @@
+{%extends "dlayout.html"%}
+{%block content%}
+<!-- banner -->
+<div class="innerpage-banner">
+	<div class="inner-page-layer">
+	</div>
+</div>
+<!-- //banner -->
+
+<div class="inner_content_info_agileits">
+   <div class="container">
+        <h3 class="heading-agileinfo">Reply here</h3>
+        <div class="modal-body align-w3">
+            <form action="" method="POST">
+                {{form.hidden_tag()}}
+                    <div class="form-group">
+                            <label class="mb-2">Reply</label>
+                            <div class="form-control" style="width: 500px;">
+                                {% if form.reply.errors %}
+                                    {{ form.reply(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.reply.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.reply(class="form-control form-control-lg") }}
+                                {% endif %}
+                                
+                            </div>
+                        </div>
+						
+                <div class="right-w3l">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}

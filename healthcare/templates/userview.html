@@ -1,0 +1,37 @@
+
+{% extends 'adminlayout.html'%}
+{% block content %}
+
+
+<div class="main-page">
+  <div class="tables">
+    <h2 class="title1"></h2>
+    <div class="panel-body widget-shadow">
+      <h4> View Users:</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for tasks in tasks %}
+          <tr>
+            <td>{{ tasks.id }}</td>
+            <td>{{ tasks.username }}</td>
+            <td>{{ tasks.email }}</td>
+            <td>{{ tasks.address }}</td>
+            <td>{{ tasks.phone }}</td>
+          </tr>
+          {% endfor%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

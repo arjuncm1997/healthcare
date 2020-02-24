@@ -63,5 +63,56 @@ class LoginForm(FlaskForm):
 
 class Dquestions(FlaskForm):
     reply = TextAreaField('reply',
-                           validators=[DataRequired(), Length(min=2, max=20)])
+                           validators=[DataRequired(), Length(min=2, max=200)])
     submit = SubmitField('Submitt')
+
+
+class Galleryform(FlaskForm):
+    image = FileField('Upload Picture', validators=[FileAllowed(['jpg', 'png','jpeg'])])
+    desc = StringField('Description',
+                           validators=[DataRequired(), Length(min=2, max=200)])
+    submit = SubmitField('Submitt')
+
+class Uprofileform(FlaskForm):
+    username = StringField('Username',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    email = StringField('Email',
+                        validators=[DataRequired(), Email()])
+    pic = FileField('Upload Picture', validators=[FileAllowed(['jpg', 'png','jpeg'])])
+    
+    address = StringField('Address',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    phone = StringField('Phone',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    submit = SubmitField('Submit')
+
+class Dprofileform(FlaskForm):
+    username = StringField('Username',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    email = StringField('Email',
+                        validators=[DataRequired(), Email()])
+    pic = FileField('Upload Picture', validators=[FileAllowed(['jpg', 'png','jpeg'])])
+    
+    address = StringField('Address',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    phone = StringField('Phone',
+                           validators=[DataRequired(), Length(min=2, max=20)])
+    speci = StringField('Specilisation',validators=[Length(min=2, max=20)])
+    submit = SubmitField('Submit')
+
+
+class Resetrequest(FlaskForm):
+    email = StringField('Email',
+                        validators=[DataRequired(), Email()])
+    submit = SubmitField('Request Password Reset')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is None:
+            raise ValidationError('There is no account with that email. You must register first.')
+
+class Changepassword(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired(),Length(min=1, max=8)])
+    confirm_password = PasswordField('Confirm Password',
+                                     validators=[DataRequired(),Length(min=1, max=8) ,EqualTo('password')])
+    submit = SubmitField('Reset')

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Online Health Care | Layout :: w3layouts</title>
+<title>Online Health Care </title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -66,13 +66,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a class="nav-link" href="/uquestion">Qusetions</a>
 					</li>
 					<li class="nav-item mr-lg-3 mt-lg-0 mt-3">
-						<a class="nav-link" href="">New Diseases</a>
+						<a class="nav-link" href="/newdisease">New Diseases</a>
                     </li>
 					<li class="nav-item mr-lg-3 mt-lg-0 mt-3">
-						<a class="nav-link" href="/contact">contact</a>
+						<a class="nav-link" href="/ucontact">contact</a>
+					</li>
+					<li class="nav-item mr-lg-3 mt-lg-0 mt-3">
+						<a class="nav-link" href="/uprofile/{{current_user.id}}">{{current_user.username}}</a>
 					</li>
 					<li class="nav-item mt-lg-0 mt-3">
-						<a class="nav-link" href=""><i class="fas fa-lock"></i> Logout</a>
+						<a class="nav-link" href="/logout"><i class="fas fa-lock"></i> Logout</a>
 					</li>
 					</li>
 				</ul>
@@ -101,11 +104,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="carousel-inner">
 								<div class="carousel-item active">
 									<h3 class="b-w3ltxt text-capitalize mt-md-4">
-										<span>Getting fit is all about mind</span> over matter</h3>
+										<span></span>Welcome {{current_user.username}}</h3>
 									<p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
 									 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis luctus lectus.
 									 Morbi at dui nisl.</p>
-									<a class="btn btn-banner mt-md-3 mt-2 text-capitalize" href="#" role="button">Read More</a>
+									
 								</div>
 								<!-- slider text -->
 								<div class="carousel-item">
@@ -114,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
 									 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis luctus lectus.
 									 Morbi at dui nisl.</p>
-									<a class="btn btn-banner mt-md-3 mt-2 text-capitalize" href="#" role="button">Read More</a>
+									
 								</div>
 								<!-- slider text -->
 								<div class="carousel-item text-white">
@@ -123,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
 									 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis luctus lectus.
 									 Morbi at dui nisl.</p>
-									<a class="btn btn-banner mt-md-3 mt-2 text-capitalize" href="#" role="button">Read More</a>
+									
 								</div>
 								<!-- slider text -->
 							</div>
@@ -139,181 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //banner -->
 
 <!-- about -->
-<section class="about py-5">
-	<div class="container py-md-3">
-		<h4 class="heading text-center">Health Center</h4>
-		<!-- <h2 class="heading text-center mb-sm-5 mb-4">About Us </h2> -->
-		<p class="text-center">Suspendisse id felis sed felis tincidunt finibus. Nulla sed justo tellus. Donec ut felis ante. Quisque ac sapien 
-			quis orci pulvinar finibus quis eu urna. onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam
-			dui mi.	Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis luctus lectus.
-			Morbi at dui nisl.</p>
-		<div class="about-grids mt-md-5 mt-4 text-center">
-			<h4 class="bg-green"><i class="fas fa-anchor"></i> <span>Training</span></h4>
-			<h4 class="bg-blue"><i class="fab fa-nutritionix"></i> <span>Nutrition</span></h4>
-			<h4 class="bg-pink"><i class="fab fa-apple"></i> <span>Diet Plan</span></h4>
-			<h4 class="bg-green-light"><i class="far fa-thumbs-up"></i> <span>Success</span></h4>
-		</div>
-	</div>
-</section>
-<!-- //about -->
 
-<!-- about bottom -->
-<section class="about-bottom pb-5">
-	<div class="container pb-md-3">
-		<div class="row bottom-grids">
-			<div class="col-lg-6">
-				<img src="../static/images/about.jpg" class="img-fluid" alt="" />
-			</div>
-			<div class="col-lg-6 mt-lg-0 mt-5">
-				<h4>Start Health Get Fit In Less Than 2 Weeks</h4>
-				<p class="py-3">Suspendisse id felis sed felis tincidunt finibus. Nulla sed in justo inter tellus. Donec ut felis ante. Quisque acin sapien 
-				quis orci pulvinar finibus quis urna. onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac quis eu urna Quisque quis eu urna lorem elit.</p>
-				<p class="">Quisque ac sapien quis orci pulvinar finibus quis eu urna Quisque Suspendisse id felis sed felis tincidunt finibus.
-				Nulla sed justo tellus. Donec ut felis ante ipsum.</p>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- //about bottom -->
-
-<!-- Offers -->
-<section class="offers py-5">
-	<div class="container py-md-3">
-		<h4 class="heading text-center">Health Center</h4>
-		<h3 class="heading text-center mb-5">What we do </h3>
-		<div class="row offer-grids">
-			<div class="col-lg-4 col-md-6">
-				<div class="gym">
-					<h4 class="text-center">Gym</h4>
-				</div>
-				<h5 class="mt-5">Vestibulum ante ipsum primis inorc faucibus orci luctus et ultrices et posuere cubilia Curae nisl, Curabitur quis luctus lectus.
-				Morbi at duins. Nulla sed justo tellus id felis sed felis faucibus orci.</h5>
-			</div>
-			<div class="col-lg-4 col-md-6">
-				<div class="offer-icon mt-lg-0 mt-4 mb-4 text-center">
-					<i class="far fa-thumbs-up"></i>
-				</div>
-				<div class="training mb-4">
-					<h4 class="text-center">Training</h4>
-				</div>
-				<div class="exercise">
-					<h4 class="text-center">Exercise</h4>
-				</div>
-			</div>
-			<div class="col-lg-4 mt-lg-0 mt-5">
-				<h5 class="mb-5">Vestibulum ante ipsum primis inorc faucibus orci luctus et ultrices et posuere cubilia Curae nisl, Curabitur quis luctus lectus.
-				Morbi at duins. Nulla sed justo tellus id felis sed felis faucibus orci.</h5>
-				<div class="yoga">
-					<h4 class="text-center">Yoga</h4>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- //Offers -->	
-		
-<!-- blog -->
-<section class="blog py-5">
-	<div class="container py-md-5 py-3">
-		<h4 class="heading text-center">Health Center</h4>
-		<h3 class="heading text-center mb-5">Fitness blog </h3>
-		<div class="row blog-grids">
-			<div class="col-lg-7 mb-lg-5 blog-img1">
-				<img src="../static/images/blog1.jpg" alt="" class="img-fluid"/>
-				<a href="single.html">Blog #1</a>
-			</div>
-			<div class="col-lg-5 mb-5">
-				<h5>August 27, 2018.</h5>
-				<h4 class="my-3">Nullam dui mi, vulputate ac</h4>
-				<p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
-				 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices morbi posuere cubilia Curae; Curabitur quis luctus lectus.</p>
-				<a href="single.html" class="btn-banner"> View Post </a>
-			</div>
-			<div class="col-lg-5 mb-lg-0 mb-4">
-				<h5>August 27, 2018.</h5>
-				<h4 class="my-3">Nullam dui mi, vulputate ac</h4>
-				<p class="my-3">onec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus semper Nullam dui mi.
-				 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices morbi posuere cubilia Curae; Curabitur quis luctus lectus.</p>
-				<a href="single.html" class="btn-banner"> View Post </a>
-			</div>
-			<div class="col-lg-7 blog-img2">
-				<img src="../static/images/blog2.jpg" alt="" class="img-fluid"/>
-				<a href="single.html">Blog #2</a>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- //blog -->
-
-<!--Social icons-->
-<section class="social py-lg-5 mb-lg-0 mb-sm-5 mb-4">
-	<div class="container">
-		<div class="social-icon footer text-center">
-			<h4>Socialize with us</h4>
-			<div class="icon-social mt-4">
-				<a href="https://www.facebook.com" class="button-footr">
-					<i class="fab mx-2 fa-facebook-f"></i>
-				</a>
-				<a href="https://twitter.com/" class="button-footr">
-					<i class="fab mx-2 fa-twitter"></i>
-				</a>
-				<a href="https://dribbble.com" class="button-footr">
-					<i class="fab mx-2 fa-dribbble"></i>
-				</a>
-				<a href="https://in.pinterest.com" class="button-footr">
-					<i class="fab mx-2 fa-pinterest-p"></i>
-				</a>
-				<a href="https://aboutme.google.com/u/0/?referer=gplus" class="button-footr">
-					<i class="fab mx-2 fa-google-plus-g"></i>
-				</a>
-
-			</div>
-		</div>
-	</div>
-</section>
-<!-- //social icons -->
-
-
-<!-- footer -->
-<footer class="py-5">
-	<div class="container py-sm-3">
-		<div class="row footer-grids">
-			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
-				<h4 class="mb-4">Healty Tips</h4>
-				<ul>
-					<li><a href="#"> Fuel Your Body Right Before And After The Workout</a></li>
-					<li class="mt-2"><a href="#">Remember Rest Is Required</a></li>
-				</ul>
-				<a class="btn btn-banner mt-md-3 mt-2 text-capitalize" href="contact.html" role="button"> Contact Us</a>
-			</div>
-			<div class="col-lg-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
-				<h4 class="mb-4">Quick Links</h4>
-				<ul>
-					<li><a href="#">Terms & Conditions</a></li>
-					<li class="my-2"><a href="#">Support Helpline</a></li>
-					<li><a href="#">Fitness Tips</a></li>
-					<li class="mt-2"><a href="#">Privacy Ploicy</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-3 col-sm-6 mb-md-0 mb-sm-5 mb-4">
-				<h4 class="mb-4">Address Info</h4>
-				<p><i class="fas mr-2 fa-map-marker"></i>Eiusmod Tempor inc St Dolore <span>Place, Kingsport 56777.</span></p>
-				<p class="phone py-2"><i class="fas mr-2 fa-phone"></i>Phone : +1 123 456 789 </p>
-				<p><i class="fas mr-2 fa-envelope"></i>Email : <a href="mailto:example@email.com">mail@example.com</a></p>
-			</div>
-			<div class="col-lg-3 col-sm-6">
-				<h4 class="mb-4">Subscribe Us</h4>
-				<form action="#" method="post">
-					<input type="email" id="email" name="EMAIL" placeholder="Enter Your Email Here" required="">
-					<input type="submit" value="Subscribe">
-				</form>
-			</div>
-		</div>
-		<div class="copyright mt-5 text-center">
-			<p>© 2018 Fitness Health. All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> </p>
-		</div>
-	</div>
-</footer>
 <!-- //footer -->
 
     <!-- js -->

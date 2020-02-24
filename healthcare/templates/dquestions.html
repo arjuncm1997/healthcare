@@ -13,32 +13,17 @@
             <td>No</td>
             <td>Name of Disease</td>
             <td>Question</td>
-            <td>Answer Here</td>
+            <td>Answer</td>
             <td>Action</th>
         </tr>
         {% for tasks in tasks %}
             <tr>
-                <form action="/dreply" method="POST">
                 <td>{{ tasks.id }}</td>
                 <td>{{ tasks.name }}</td>
                 <td>{{ tasks.question }}</td>
-                <td>
-                    <div class="form-control" style="width: 500px;">
-                        {% if form.reply.errors %}
-                            {{ form.reply(class="form-control form-control-lg is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.reply.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.reply(class="form-control form-control-lg") }}
-                        {% endif %}
-                        
-                    </div>
-                </td>
-                <td><a href="/dreply/{{tasks.id}}">Submitt</a></td>
-            </form>
+                <td>{{tasks.reply}} </td>
+                <td><a href="/dreply/{{tasks.id}}">Reply</a></td>
+            
             </tr>
         {% endfor %}
     </table>
