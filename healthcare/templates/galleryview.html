@@ -8,7 +8,7 @@
     <h2 class="title1"></h2>
     <div class="panel-body widget-shadow">
       <h4>Your Images</h4>
-      <table class="table">
+      <table class="table css-serial">
         <thead>
           <tr>
             <th>No</th>
@@ -20,7 +20,7 @@
         <tbody>
             {% for tasks in tasks %}
           <tr>
-            <td>{{ tasks.id }}</td>
+            <td></td>
             <td><span class="image-block">
                 <a class="image-zoom" href="static/pics/{{tasks.image}}" rel="prettyPhoto[gallery]" style="height: 250px;width: 335px;">
                    <figure>
@@ -41,5 +41,17 @@
     </div>
   </div>
 </div>
+<style>
+  
+.css-serial {
+    counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  }
+  
+  .css-serial td:first-child:before {
+    counter-increment: serial-number;  /* Increment the serial number counter */
+    content: counter(serial-number);  /* Display the counter */
+  }
+  
+</style>
 
 {% endblock %}

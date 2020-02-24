@@ -7,9 +7,9 @@
 </div>
 
 <h1 style="margin-top: 50px;margin-bottom: 50px;"><center>Doctor Appoinments</center></h2><br>
-    <table border="2" style="width:1002px; margin-left:141px; text-align:center;">
+    <table class="css-serial" border="2" style="width:1002px; margin-left:141px; text-align:center;">
         <tr style="font-weight: bold;">
-            <td>Id</td>
+            <th>Id</th>
             <td>Name</td>
             <td>Doctor</td>
             <td>Reason</td>
@@ -20,7 +20,7 @@
         </tr>
         {% for tasks in tasks %}
             <tr>
-                <td>{{ tasks.id }}</td>
+                <td></td>
                 <td>{{ tasks.name }}</td>
                 <td>{{ tasks.doctor }}</td>
                 <td>{{ tasks.reason }}</td>
@@ -33,4 +33,19 @@
     </table>
 <br><br>
 
+
+
+<style>
+
+.css-serial {
+    counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  }
+  
+  .css-serial td:first-child:before {
+    counter-increment: serial-number;  /* Increment the serial number counter */
+    content: counter(serial-number);  /* Display the counter */
+  }
+  
+
+</style>
 {% endblock %}

@@ -7,9 +7,9 @@
 </div>
 
 <h1 style="margin-top: 50px;margin-bottom: 50px;"><center>Queries View</center></h2><br>
-    <table border="2" style="width:1002px; margin-left:141px; text-align:center;">
+    <table class="css-serial" border="2" style="width:1002px; margin-left:141px; text-align:center;">
         <tr style="font-weight: bold;">
-            <td>No</td>
+            <th>No</th>
             <td>Disease</td>
             <td>Doctor</td>
             <td>Qusetion</td>
@@ -29,5 +29,16 @@
         {% endfor %}
     </table>
 <br><br>
-
+<style>
+    
+.css-serial {
+    counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  }
+  
+  .css-serial td:first-child:before {
+    counter-increment: serial-number;  /* Increment the serial number counter */
+    content: counter(serial-number);  /* Display the counter */
+  }
+  
+</style>
 {% endblock %}

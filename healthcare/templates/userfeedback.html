@@ -8,10 +8,10 @@
     <h2 class="title1"></h2>
     <div class="panel-body widget-shadow">
       <h4>User Feedbacks:</h4>
-      <table class="table">
+      <table class="table css-serial">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>No</th>
             <th>Name</th>
             <th>Email</th>
             <th>Subject</th>
@@ -21,7 +21,7 @@
         <tbody>
             {% for tasks in tasks %}
           <tr>
-            <td>{{ tasks.id }}</td>
+            <td></td>
             <td>{{ tasks.name }}</td>
             <td>{{ tasks.email }}</td>
             <td>{{ tasks.subject }}</td>
@@ -33,5 +33,16 @@
     </div>
   </div>
 </div>
-
+<style>
+  
+.css-serial {
+    counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  }
+  
+  .css-serial td:first-child:before {
+    counter-increment: serial-number;  /* Increment the serial number counter */
+    content: counter(serial-number);  /* Display the counter */
+  }
+  
+</style>
 {% endblock %}
